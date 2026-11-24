@@ -1,0 +1,34 @@
+@import "tailwindcss";
+html { scroll-behavior: smooth; }
+
+.sway { transform-box: fill-box; transform-origin: 0% 50%; animation: sway 9s ease-in-out infinite alternate; }
+.sway.b { animation-duration: 12s; animation-delay: -3s; }
+@keyframes sway { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sway { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+:root {
+  --bg: #ece4d2; --ink: #17201b; --muted: #5a5f52;
+  --panel: #ddd2ba; --land: #8aa593; --line: #17201b; --accent: #a8472f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1512; --ink: #e9e2d3; --muted: #a9ada0;
+    --panel: #16231d; --land: #2b4a3c; --line: #8a8379; --accent: #d17a56;
+  }
+}
+body { background: var(--bg); color: var(--ink); }
+
+.ruta-trazo { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trazo 3.5s ease-out .3s forwards; }
+@keyframes trazo { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .ruta-trazo { animation: none; stroke-dashoffset: 0; }
+}
+.ruta-trazo { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trazo 3.5s ease-out .3s forwards; }
+@keyframes trazo { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .ruta-trazo { animation: none; stroke-dashoffset: 0; }
+}
