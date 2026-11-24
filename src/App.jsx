@@ -15,7 +15,6 @@ import MarcaDeAgua from './components/MarcaDeAgua'
 export default function App() {
   return (
     <BrowserRouter>
-    {import.meta.env.VITE_MARCA_DE_AGUA !== 'off' && <MarcaDeAgua />}
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
